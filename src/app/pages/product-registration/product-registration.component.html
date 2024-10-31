@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-6"></div>
+        <div class="col-sm-12 col-6">
+            <div>
+                <label class="form-label" for="txt-product-name">Product Name</label>
+                <input class="form-control" [(ngModel)]="product.name" type="text" name="product-name" id="txt-product-name">
+                <div>
+                    <label class="form-label" for="txt-product-description">Product Description</label>
+                    <input class="form-control" type="text" [(ngModel)]="product.description" name="product-name" id="txt-product-discription">
+                </div>
+                
+                <!-- Property binding
+                <div class="mt-2">
+                    <button [disabled]="product.name == null || product.name == ''" (click)="register()" class="btn btn-primary">Register</button>
+                </div> -->
+
+                <!-- Structural binding -->
+                <div class="mt-2" *ngIf="product.name != null && product.name !== ''">
+                    <button (click)="register()" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
